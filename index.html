@@ -1,44 +1,47 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Student Activity</title>
-    </head>
-        <body>
-            <h1>Open Console</h1>
-            <br>
-            <p>How to set up the App.<p>First, you will need to download the app on your Mac or Desktop. Then, you will need to
-                create a new folder. Lastly, attach the the folder to the app by clicking file at the top left corner and after that click "OPEN
-                FOLDER" and choose the folder that you downloaded.</p>
-                <br>
-                <p>What is a console.<p>The console is used to catch and debug errors. If you accidentally make a syntax error
-                    then if you go to the console you can find where the bug is. You can get to the console by right clicking on the
-                    screen and choose the last option which is "INSPECT". Once you click on it you will get an option on the top right
-                    corner saying console. Once you click on it it will tell you if there are any syntax bugs or if it is working 
-                    completely fine</p>
-                <script>
-                    console.log("Hi Iam console screen.");
+<head>
+	<title>Kwitter Room</title>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
 
-                    var firstname= "Tony";
-                    var lastname= "Stark";
-                    console.log(firstname)
-                    console.log(lastname);
+<link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
 
-                    var fullname= firstname.concat(" ", lastname);
-                    console.log(fullname);
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-                    var a= 10 
-                    var b= 5
-                    
-                    var maximum_number= Math.max(5, 10);
-                    console.log(maximum_number);
+<link rel="stylesheet" type="text/css" href="style.css">
 
-                    var minimum_number= Math.min(5, 10);
-                    console.log(minimum_number);
+</head>
+<body>
+<div class="container">
+<button id="logout" onclick ="logout();" class="glyphicon glyphicon-log-out btn btn-danger"> Logout</button>
+	<center>
+		<h1 class="header">	
+			Kwitter	Chatting Interface
+			<sup>
+				<img src="m2.png">
+			</sup>
+		</h1>
+		<h3 id="user_name" class="color_white"></h3>
+		<div class="form-group input_div_room_page">
+			<label>Add A Room:</label>
 
-                    var add= a + b;
-                    console.log(add)
+			<input type="text" id="room_name" class="form-control" placeholder="Room Name">
 
-                    var sub= a - b;
-                    console.log(sub)
-                </script>
-        </body>
+		</div>
+		<br>
+		<button class="btn btn-success" onclick="addRoom();">Add Room</button>
+		<br><br>
+		<h3 class="color_white">Find all the recent TRENDING ROOMS.</h3>
+
+		<div id="output"></div>
+	
+	</center>
+</div>
+<script src="kwitter_room.js"></script>
+</body>
 </html>
